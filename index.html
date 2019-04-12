@@ -3,6 +3,8 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <script type="text/javascript" src="js/Base64.js"></script>
     <script type="text/javascript" src="js/3des.js"></script>
     <script src="https://cdn.bootcss.com/crypto-js/3.1.9-1/crypto-js.min.js"></script>
@@ -32,10 +34,15 @@
 </head>
 
 <body onload="">
-    <button onclick="window.android.signSuccess('1111',123)">android</button>
+
+    <button onclick="window.android.signSuccess('JsonString')">android</button> 
+
+    <button onclick="signSuccess('JsonString')">ios</button>
 
 
-    <button onclick="call_iOS('hello world')">ios</button>
+
+    <button onclick="btnClick()">一次调用</button> 
+ 
 
 
     
@@ -52,6 +59,13 @@
  
 </body>
 <script> 
+ function btnClick(){
+            if (/android/i.test(navigator.userAgent)){ 
+                window.android.signSuccess('JsonString');
+            } else if (/ipad|iphone|iPod|iOS|mac/i.test(navigator.userAgent)){
+                signSuccess('JsonString')
+            }
+        }
 </script>
 
 </html>
