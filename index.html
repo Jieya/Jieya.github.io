@@ -5,25 +5,47 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <script type="text/javascript" src="js/Base64.js"></script>
     <script type="text/javascript" src="js/3des.js"></script>
+    <script src="https://cdn.bootcss.com/crypto-js/3.1.9-1/crypto-js.min.js"></script>
+    <script>
+        // function gen(){
+
+        //     var str =document.getElementById("inputStr").value;
+        //     var key =document.getElementById("inputKey").value; 
+
+        //     console.log('str:'+str+"\n key:"+key);
+            
+
+        //     var des3en = DES3.encrypt(key, str);
+  
+        //     var encrypted = CryptoJS.TripleDES.encrypt(CryptoJS.enc.Utf8.parse(str).toString(), CryptoJS.enc.Utf8.parse(key).toString());
+
+            
+        //     console.log(encrypted.toString());
+            
+        //     debugger
+        //     document.getElementById('resultDiv').innerHTML=encrypted.toString()+''; 
+        // }
+
+
+        
+    </script>
 </head>
 
 <body>
-    <script type="text/javascript">
-        var str = "网址：//www.jb51.net";
-        document.write("原始字符串:</br>" + str);
-        var base64 = BASE64.encoder(str); //返回编码后的字符
-        document.write("</br>BASE64后:</br>" + base64);
-        //alert(base64);
-        var unicode = BASE64.decoder(base64); //返回会解码后的字符串。
-        //alert(unicode);
-        document.write("</br>还原:</br>" + unicode);
-        //var str= "你好123hello";
-        var key = "qXSdHWfbSZaaLeHBRhLgxBiG";
-        //alert(decrypt_3des);
-        var des3en = DES3.encrypt(key, str);
-        document.write("</br>des3加密:</br>" + des3en);
-        document.write("</br>des3解密:</br>" + DES3.decrypt(key, des3en));
-    </script>
+    <button onclick="window.hello.showAndroid()">点击Toast</button>
+    
+    <!-- 字符串：<input type="text" id="inputStr" value="魏成琳|421302198909031752|15889723572"> <br/><br/>
+    key：<input type="text" id="inputKey" value="52ZKZqtYQBdF0YC9mSC5qfWX"><br/><br/>
+    <button onclick="gen()">加密</button>
+    <br/><br/>
+    <div id="resultDiv"></div> -->
+
+
+
+    
+ 
 </body>
 
 </html>
+ 
+</script>
