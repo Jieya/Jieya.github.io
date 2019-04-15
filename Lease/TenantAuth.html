@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta http-equiv="Access-Control-Allow-Origin" content="*">
+	<meta charset="utf-8">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<!-- STYLESHEETS -->
+	<!--[if lt IE 9]><script src="js/flot/excanvas.min.js"></script><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script><![endif]-->
+	<!-- <link rel="stylesheet" type="text/css" href="../css/themes/default.css" id="skin-switcher"> -->
+	<!-- <link rel="stylesheet" type="text/css" href="../css/cloud-admin.css"> -->
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+	<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+	<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+	<link rel="stylesheet" type="text/css" href="./asset/css/index.css">
+
+</head>
+
+<body>
+	<div id="app">
+
+		<span class="sectionHead">为保证合同法律效力，实名信息请和合同中乙方信息一致请核对合同内容，合同履行过程中所产生的风险由合同当事人自行承担</span>
+
+		<div class="row">
+			<template>
+				<el-radio v-model="radio" label="0">个人</el-radio>
+				<el-radio v-model="radio" label="1">企业</el-radio>
+			</template>
+		</div>
+
+
+		<span class="sectionHead">系统会与公安部身份信息系统进行匹配，核实身份真实性 </span>
+		<div class="form-group">
+			<el-row :gutter="0">
+				<el-col :span="6">
+					<div class="title">真实姓名</div>
+				</el-col>
+				<el-col :span="18">
+					<div class="content">
+						<el-input v-model="realName" placeholder="请输入内容"></el-input>
+					</div>
+
+				</el-col>
+			</el-row>
+		</div>
+
+		<div class="form-group">
+			<el-row :gutter="0">
+				<el-col :span="6">
+					<div class="title">身份证号</div>
+				</el-col>
+				<el-col :span="18">
+					<div class="content">
+						<el-input v-model="identityCode" placeholder="请输入身份证号"></el-input>
+					</div>
+
+				</el-col>
+			</el-row>
+		</div>
+		<span class="sectionHead">签订电子合同时将使用此手机号进行身份验证</span>
+
+		<div class="form-group">
+			<el-row :gutter="0">
+				<el-col :span="6">
+					<div class="title">手机号</div>
+				</el-col>
+				<el-col :span="18">
+					<div class="content">
+						<el-input v-model="phone" placeholder="请输入手机号"></el-input>
+					</div>
+
+				</el-col>
+			</el-row>
+		</div>
+
+
+		<div class="form-group">
+			<el-row :gutter="0">
+				<el-col :span="6">
+					<div class="title">验证码</div>
+				</el-col>
+				<el-col :span="9">
+					<div class="content">
+						<el-input v-model="code" placeholder="请输入验证码"></el-input>
+					</div>
+				</el-col>
+				<el-col :span="9" class="contentBtn">
+					<el-button @click="sendMsg" type="primary" :disabled="isDisabled">{{buttonName}}</el-button> 
+				</el-col>
+
+
+			</el-row>
+		</div>
+
+		<el-button type="primary" class="next">下一步</el-button>
+
+	</div>
+
+	<script src="../js/jquery/jquery-2.0.3.min.js"></script>
+	<script src="../js/jQuery-Cookie/jquery.cookie.min.js"></script>
+	<script src="./asset/js/TenantAuth.js"></script>
+	<script type="text/javascript">
+		$("#IPC_SP").html(new Date().getFullYear()); 
+	</script>
+</body>
+
+</html>

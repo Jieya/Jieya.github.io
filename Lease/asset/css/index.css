@@ -1,0 +1,47 @@
+
+body{
+    font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+    background-color: #EFEFF4;
+    margin: 0;
+}
+.sectionHead{
+    font-size: 14px;
+    color: #777777;
+    display: block; 
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    padding-right: 10px;
+}
+
+.row{
+    background-color: #ffffff;
+    padding: 11px;   
+}
+
+.form-group{
+    background-color: #ffffff;
+    padding: 2px;   
+    padding-left: 10px;
+    padding-right: 5px;
+    margin-top: 1px;
+}
+ 
+.title{
+    color: #333333;
+    line-height: 40px;
+}
+
+.form-group .el-input__inner{
+    border: 1px solid #ffffff;
+}
+
+.next{
+    width: 75%; 
+    margin-top: 20px;
+    margin-left: 12.5%
+}
+
+.contentBtn{
+    text-align: right;  
+}
