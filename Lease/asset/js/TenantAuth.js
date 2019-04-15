@@ -7,7 +7,7 @@
         identityCode:'',
         phone:'',
         code:'',
-        buttonName: "发送短信",
+        buttonName: "获取验证码",
         isDisabled: false,
         time: 60 
     },
@@ -15,7 +15,7 @@
         sendMsg() {
             vm.isDisabled = true;
             var interval = window.setInterval(function () {
-                vm.buttonName =  '('+vm.time + ')重新发送';
+                vm.buttonName = '重新发送('+vm.time + ')';
                 --vm.time; 
                 if (vm.time < 0) {
                     vm.buttonName = "重新发送";
