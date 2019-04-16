@@ -41,7 +41,34 @@ body{
     margin-top: 20px;
     margin-left: 12.5%
 }
-
+.short{
+    width: 35%;
+}
 .contentBtn{
     text-align: right;  
+}
+
+.sectionHead1{
+    font-size: 16px;
+    font-weight: bold;
+    color: #333333;
+    display: block; 
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    padding-right: 10px;
+}
+
+.titleCom{
+    padding-top: 10px;
+    padding-bottom: 5px;
+    color: #333333;
+    font-size: 14px;
+    line-height: 25px;
+}
+
+.titleDesc{
+    color: #777777;
+    font-size: 14px;
+    line-height: 25px;
 }
