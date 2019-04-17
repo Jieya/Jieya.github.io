@@ -5,7 +5,7 @@
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 	<meta http-equiv="Access-Control-Allow-Origin" content="*">
 	<meta charset="utf-8">
-	<title>电子合同|签约</title>
+	<title>电子合同 | 签约</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
 	<meta name="description" content="">
 	<meta name="author" content="">
@@ -190,16 +190,20 @@
 		<div class="form-group">
 			<el-row :gutter="0">
 				<el-col :span="6">
-					<div class="title">营业执照</div>
+					<div class="title titleUpload">营业执照</div>
 				</el-col>
 				<el-col :span="18">
 					<div class="contentBtn">
-						<!-- <el-upload class="upload-demo" action="https://jsonplaceholder.typicode.com/posts/"
-							:on-preview="handlePreview" :on-remove="handleRemove" :file-list="fileList"
-							list-type="picture">
-							<el-button size="small" type="primary">点击上传</el-button>
-							<div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
-						</el-upload> -->
+							<el-upload
+							class="avatar-uploader"
+							action=''
+							:auto-upload="false"
+							:show-file-list="false" 
+							:before-upload="beforeAvatarUpload"
+							:on-change="getBusinessLicence">
+							<img v-if="businessLicence" :src="businessLicence" class="avatar">
+							<i v-else class="el-icon-plus avatar-uploader-icon"></i>
+						  </el-upload> 
 					</div>
 				</el-col>
 			</el-row>
@@ -286,12 +290,18 @@
 					</el-col>
 					<el-col :span="18">
 						<div class="contentBtn">
-							<!-- <el-upload class="upload-demo" action="https://jsonplaceholder.typicode.com/posts/"
-								:on-preview="handlePreview" :on-remove="handleRemove" :file-list="fileList"
-								list-type="picture">
-								<el-button size="small" type="primary">点击上传</el-button>
-								<div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
-							</el-upload> -->
+								<div class="contentBtn">
+										<el-upload
+										class="avatar-uploader"
+										action=''
+										:auto-upload="false"
+										:show-file-list="false" 
+										:before-upload="beforeAvatarUpload"
+										:on-change="getCertificate">
+										<img v-if="certificate" :src="certificate" class="avatar">
+										<i v-else class="el-icon-plus avatar-uploader-icon"></i>
+									  </el-upload> 
+								</div>
 						</div>
 					</el-col>
 				</el-row>
