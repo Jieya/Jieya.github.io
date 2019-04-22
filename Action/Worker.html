@@ -221,15 +221,12 @@
  
             <div class="btnCopy">
 
-                    <el-button class="ml10" type="text" size="medium" @click="copyResult">点击复制</el-button> 
-
-                    <button class="tag-read" data-clipboard-text="result" @click="copyResult">立即阅读</button>
-
-
+                    <el-button class="ml10" type="text" data-clipboard-target="#resultTxt" size="medium" @click="copyResult">点击复制</el-button>  
+ 
             </div>
 
 
-        <el-input type="textarea" autosize placeholder="" v-model="result" class="result" v-if="result.length > 0">
+        <el-input id="resultTxt" type="textarea" autosize placeholder="" v-model="result" class="result" v-if="result.length > 0">
         </el-input>
 
 
