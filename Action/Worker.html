@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <meta charset="utf-8">
+    <title>排班</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- STYLESHEETS -->
+    <!--[if lt IE 9]><script src="js/flot/excanvas.min.js"></script><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script><![endif]-->
+    <!-- <link rel="stylesheet" type="text/css" href="../css/themes/default.css" id="skin-switcher"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../css/cloud-admin.css"> -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.bootcss.com/qs/6.6.0/qs.js"></script>
+    <script src="https://cdn.bootcss.com/clipboard.js/2.0.4/clipboard.js"></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <link rel="stylesheet" type="text/css" href="./asset/css/index.css">
+
+</head>
+
+<body>
+    <div id="app">
+
+        <div id="myCanvas"><img src="worker.jpg" class="myImg" id="myImg">
+
+        </div>
+
+        <div id="topDiv"><img src="worker.jpg">
+        </div>
+
+        <div class="form-group">
+            <el-row :gutter="0">
+                <el-col :span="4">
+                    <div class="title">A区</div>
+                </el-col>
+                <el-col :span="18">
+                    <template>
+                        <el-select v-model="dist_A" placeholder="请选择" @change="getResult" >
+                            <el-option v-for="item in options" :key="item.value" :label="item.label"
+                                :value="item.value">
+                            </el-option>
+                        </el-select>
+
+                        <el-select v-model="dist_A1" placeholder="请选择" @change="getResult">
+                            <el-option v-for="item in options" :key="item.value" :label="item.label"
+                                :value="item.value">
+                            </el-option>
+                        </el-select>
+
+                    </template>
+                </el-col>
+            </el-row>
+        </div>
+
+        <div class="form-group">
+            <el-row :gutter="0">
+                <el-col :span="4">
+                    <div class="title">B区</div>
+                </el-col>
+                <el-col :span="18">
+                    <template>
+                        <el-select v-model="dist_B" placeholder="请选择" @change="getResult">
+                            <el-option v-for="item in options" :key="item.value" :label="item.label"
+                                :value="item.value">
+                            </el-option>
+                        </el-select>
+
+                        <el-select v-model="dist_B1" placeholder="请选择" @change="getResult">
+                            <el-option v-for="item in options" :key="item.value" :label="item.label"
+                                :value="item.value">
+                            </el-option>
+                        </el-select>
+
+                    </template>
+                </el-col>
+            </el-row>
+        </div>
+
+        <div class="form-group">
+            <el-row :gutter="0">
+                <el-col :span="4">
+                    <div class="title">小房间</div>
+                </el-col>
+                <el-col :span="18">
+                    <template>
+                        <el-select v-model="smallRoom" placeholder="请选择" @change="getResult">
+                            <el-option v-for="item in options" :key="item.value" :label="item.label"
+                                :value="item.value">
+                            </el-option>
+                        </el-select>
+
+                        <el-select v-model="smallRoom1" placeholder="请选择" @change="getResult">
+                            <el-option v-for="item in options" :key="item.value" :label="item.label"
+                                :value="item.value">
+                            </el-option>
+                        </el-select>
+
+                    </template>
+                </el-col>
+            </el-row>
+        </div>
+
+
+        <div class="form-group">
+            <el-row :gutter="0">
+                <el-col :span="4">
+                    <div class="title">更衣室</div>
+                </el-col>
+                <el-col :span="18">
+                    <template>
+                        <el-select v-model="lockerRoom" placeholder="请选择" @change="getResult">
+                            <el-option v-for="item in options" :key="item.value" :label="item.label"
+                                :value="item.value">
+                            </el-option>
+                        </el-select>
+
+                        <el-select v-model="lockerRoom1" placeholder="请选择" @change="getResult">
+                            <el-option v-for="item in options" :key="item.value" :label="item.label"
+                                :value="item.value">
+                            </el-option>
+                        </el-select>
+
+                    </template>
+                </el-col>
+            </el-row>
+        </div>
+
+        <div class="form-group">
+            <el-row :gutter="0">
+                <el-col :span="4">
+                    <div class="title">仪器</div>
+                </el-col>
+                <el-col :span="18">
+                    <template>
+                        <el-select v-model="instrument" placeholder="请选择" @change="getResult">
+                            <el-option v-for="item in options" :key="item.value" :label="item.label"
+                                :value="item.value">
+                            </el-option>
+                        </el-select>
+
+                        <el-select v-model="instrument1" placeholder="请选择" @change="getResult">
+                            <el-option v-for="item in options" :key="item.value" :label="item.label"
+                                :value="item.value">
+                            </el-option>
+                        </el-select>
+
+                    </template>
+                </el-col>
+            </el-row>
+        </div>
+
+
+        <div class="form-group">
+            <el-row :gutter="0">
+                <el-col :span="4">
+                    <div class="title">洗毛巾</div>
+                </el-col>
+                <el-col :span="18">
+                    <template>
+                        <el-select v-model="towel" placeholder="请选择" @change="getResult">
+                            <el-option v-for="item in options" :key="item.value" :label="item.label"
+                                :value="item.value">
+                            </el-option>
+                        </el-select>
+
+                        <el-select v-model="towel1" placeholder="请选择" @change="getResult">
+                            <el-option v-for="item in options" :key="item.value" :label="item.label"
+                                :value="item.value">
+                            </el-option>
+                        </el-select>
+
+                    </template>
+                </el-col>
+            </el-row>
+        </div>
+
+
+        <div class="form-group">
+            <el-row :gutter="0">
+                <el-col :span="4">
+                    <div class="title">8楼</div>
+                </el-col>
+                <el-col :span="18">
+                    <template>
+                        <el-select v-model="eighthFloor" placeholder="请选择" @change="getResult">
+                            <el-option v-for="item in options" :key="item.value" :label="item.label"
+                                :value="item.value">
+                            </el-option>
+                        </el-select>
+
+                        <el-select v-model="eighthFloor1" placeholder="请选择" @change="getResult" @change="getResult">
+                            <el-option v-for="item in options" :key="item.value" :label="item.label"
+                                :value="item.value">
+                            </el-option>
+                        </el-select>
+
+                    </template>
+                </el-col>
+            </el-row>
+        </div>
+
+        <div class="form-group">
+                <el-row :gutter="0">
+                    <el-col :span="4">
+                        <div class="title">日期</div>
+                    </el-col>
+                    <el-col :span="18">
+                            <el-date-picker  v-model="dateValue" style="width:245px;"    format="yyyy 年 MM 月 dd 日"
+                            value-format="MM 月 dd 日"  type="date" @change="getResult"
+                            placeholder="选择排班日期">
+                          </el-date-picker>
+                    </el-col>
+                </el-row>
+            </div>
+ 
+            <div class="btnCopy">
+
+                    <el-button class="ml10" type="text" size="medium" @click="copyResult">点击复制</el-button> 
+            </div>
+
+
+        <el-input type="textarea" autosize placeholder="" v-model="result" class="result" v-if="result.length > 0">
+        </el-input>
+
+
+    </div>
+
+    <script src="../js/jquery/jquery-2.0.3.min.js"></script>
+    <script src="../js/jQuery-Cookie/jquery.cookie.min.js"></script>
+    <script src="./asset/js/worker.js"></script>
+
+</body>
+
+</html>

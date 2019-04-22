@@ -1,0 +1,74 @@
+body {
+    font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    background-color: #EFEFF4;
+    margin: 0;
+}
+
+
+#myCanvas {
+    width: 98%;
+    height: 474px; 
+    overflow-x: auto; 
+    white-space: nowrap;
+}
+
+#topDiv{
+    width: 105px;
+    overflow: hidden; 
+    position: absolute;
+    top: 0;
+}
+
+.myImg {
+    position: relative;
+    /*定位*/  
+}
+
+
+::-webkit-scrollbar {
+    display: none;
+
+    /* 或者这样
+        width: 0;
+        height: 0;
+        */
+}
+
+.el-select{
+    width: 120px;
+}
+ 
+
+.title{
+    color: #333333;
+    line-height: 40px; 
+    text-align: right;
+    padding-right: 5px;
+}
+
+.form-group{ 
+    padding: 2px;   
+    padding-left: 10px;
+    padding-right: 5px;
+    margin-top: 1px;
+}
+
+.btnDone{ 
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    
+}
+
+.result{ 
+    width: 96%;
+    margin-left: 2%;  
+    margin-bottom: 20px;
+}
+
+.btnCopy{
+    margin-right: 15px;    
+    float: right;
+    margin-top: 10px;
+}

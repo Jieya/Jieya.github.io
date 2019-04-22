@@ -24,7 +24,7 @@ new Vue({
 
         // 获取get参数 skipCode
 
- 
+
         this.skipCode = this.getQueryVariable('code');
 
 
@@ -57,7 +57,7 @@ new Vue({
         }
 
     },
-    methods: { 
+    methods: {
         getQueryVariable(variable) {
             var query = window.location.search.substring(1);
             var vars = query.split("&");
@@ -100,20 +100,20 @@ new Vue({
 
             if (this.radio == '0') {
 
-                if(this.realName.length==0){
+                if (this.realName.length == 0) {
                     this.$message.error('请输入真实姓名!');
                     return;
-                }else if(this.identityCode.length==0){
+                } else if (this.identityCode.length == 0) {
                     this.$message.error('请输入身份证号码!');
                     return;
-                }else if(this.phone.length==0){
+                } else if (this.phone.length == 0) {
                     this.$message.error('请输入手机号码!');
                     return;
-                }else if(this.code.length==0){
+                } else if (this.code.length == 0) {
                     this.$message.error('请输入验证码!');
                     return;
                 }
- 
+
                 // 个人用户，直接认证
                 var params = {
                     SkipCode: this.skipCode,
@@ -131,8 +131,12 @@ new Vue({
                     } else {
                         var obj = JSON.parse(result);
                         console.log('obj', obj);
+                        if (obj.Result == "SUCCESS") { 
+                            this.done();
+                        }else{
+                            this.$message.error('操作失败，请重试！');
+                        }
 
-                        //  window.location.href = 'https://www.baidu.com'
                     }
                 });
             } else {
@@ -140,8 +144,24 @@ new Vue({
                 this.step = 2;
             }
 
-        },
+        }, 
         done() {
+            var params = {
+                SkipCode: this.skipCode,
+                Path: 1
+            }
+            this.sendPost('http://192.168.1.88:9110/Contract/Extsign', params, (err, result) => {
+                if (err) {
+                    throw err;
+                } else {
+                    var obj = JSON.parse(result);
+                    console.log('obj', obj);
+                    if (obj.Result == "SUCCESS") {
+                         window.location.href = obj.signUrl;
+                    }
+
+                }
+            });
 
         },
         goBack() {
@@ -197,11 +217,8 @@ new Vue({
         },
         sendPost: function (urlStr, data, cb) {
 
-            var dataStr = "paramsJSON=" + JSON.stringify(data);
 
-            axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
-
-            axios.post(urlStr, dataStr)
+            axios.post(urlStr, Qs.stringify(data), { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } })
                 .then(function (response) {
                     console.log(response);
 
