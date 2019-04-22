@@ -212,7 +212,7 @@
                     </el-col>
                     <el-col :span="18">
                             <el-date-picker  v-model="dateValue" style="width:245px;"    format="yyyy 年 MM 月 dd 日"
-                            value-format="MM 月 dd 日"  type="date" @change="getResult"
+                            value-format="MM 月 dd 日"  type="date" @change="getResult" :editable="false"
                             placeholder="选择排班日期">
                           </el-date-picker>
                     </el-col>
@@ -222,6 +222,10 @@
             <div class="btnCopy">
 
                     <el-button class="ml10" type="text" size="medium" @click="copyResult">点击复制</el-button> 
+
+                    <button class="tag-read" data-clipboard-text="result" @click="copyResult">立即阅读</button>
+
+
             </div>
 
 
