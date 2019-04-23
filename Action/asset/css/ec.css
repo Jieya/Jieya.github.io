@@ -1,0 +1,30 @@
+body {
+    font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    background-color: #EFEFF4;
+    margin: 0;
+}
+
+.form-group {
+    padding: 2px;
+    padding-left: 10px;
+    padding-right: 5px;
+    padding-bottom: 10px;
+    margin-top: 10px;
+    background-color: #ffffff;
+}
+
+.content {
+    font-size: 14px;
+    color: #777777;
+    line-height: 21px;
+}
+
+.title {
+    line-height: 35px; 
+    font-weight: bold;
+    display: inline-block;
+}
+
+.bold{
+    font-weight: bold;
+}
