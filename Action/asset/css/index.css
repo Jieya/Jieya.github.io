@@ -7,14 +7,14 @@ body {
 
 #myCanvas {
     width: 98%;
-    height: 474px; 
+    height: 529px; 
     overflow-x: auto; 
     white-space: nowrap;
     -webkit-overflow-scrolling : touch;
 }
 
 #topDiv{
-    width: 105px;
+    width: 90px;
     overflow: hidden; 
     position: absolute;
     top: 0;
