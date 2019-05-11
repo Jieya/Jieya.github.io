@@ -24,7 +24,7 @@ new Vue({
             { value: ' ', label: '无' },
             { value: '燕', label: '胡小燕' },
             { value: '琴', label: '杨琴琴' },
-            { value: '芳', label: '李丽芳' },
+            { value: '丽', label: '李丽芳' },
             { value: '雯', label: '黄慧雯' },
             { value: '娟', label: '谢文娟' },
             { value: '玲', label: '李红玲' },
