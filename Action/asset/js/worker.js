@@ -62,17 +62,21 @@ new Vue({
             str += 'A区: ' + this.dist_A + '  ' + this.dist_A1 + '\n\n';
             str += 'B区: ' + this.dist_B + '  ' + this.dist_B1 + '\n\n';
             str += '小房间: ' + this.smallRoom + '  ' + this.smallRoom1 + '\n\n';
-            str += '更衣室: ' + this.lockerRoom + '  ' + this.lockerRoom1 + '\n\n';
+            str += '办公室: ' + this.lockerRoom + '  ' + this.lockerRoom1 + '\n\n';
             str += '仪器: ' + this.instrument + '  ' + this.instrument1 + '\n\n';
             str += '洗毛巾: ' + this.towel + '  ' + this.towel1 + '\n\n';
             str += '8楼: ' + this.eighthFloor + '  ' + this.eighthFloor1 + '\n\n';
 
+                              
 
-            str += '更衣室早班卫生要求：要把桌面酒精擦拭消毒，物品摆放整齐（包含鞋子、雨伞等物品摆放）\n\n';
+                                                    
 
-            str += '晚班卫生要求：外卖盒、零食袋子等下班前一定要扔到消防通道大垃圾桶以及地上垃圾的及时清理！\n\n';
 
-            str += 'Ａ区卫生要求：椅子统一摆放整齐，垃圾桶盖上，洗手台水迹擦干，物品摆放整齐，玻璃镜子每天擦拭\n\n';
+            str += '办公室早班卫生要求：所有桌面擦拭消毒，物品分类（办公用物，私人物品茶杯等）放置整齐，公共餐桌物品摆放整齐（包含杯子、饭盒等）杂物，垃圾收拾干净，所有椅櫈归位，摆放整洁。\n重点：在岗人员全天维护以上标准，当天值日生督导维护。\n';
+
+            str += '\n晚班卫生要求：同早班标准+外卖盒、零食袋子等下班前一定要扔到消防通道大垃圾桶。\n';
+
+            str += '重点：关闭窗户，空调，电脑，灯光，存在安全隐患电源类。\n';
 
 
 
