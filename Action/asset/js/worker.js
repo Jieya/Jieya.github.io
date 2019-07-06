@@ -34,6 +34,7 @@ new Vue({
             { value: '思', label: '曾思敏' },
             { value: '倩', label: '田倩' },
             { value: '心', label: '梁馨心' },
+            { value: '辉', label: '易辉' },
             { value: '沁', label: '赖如沁' }
         ]
 
@@ -59,7 +60,7 @@ new Vue({
 
 
             var str = this.dateValue + ' 护理间卫生分配:\n\n';
-            str += 'A区: ' + this.dist_A + '  ' + this.dist_A1 + '\n\n';
+            str += 'A区+走廊: ' + this.dist_A + '  ' + this.dist_A1 + '\n\n';
             str += 'B区: ' + this.dist_B + '  ' + this.dist_B1 + '\n\n';
             str += '小房间: ' + this.smallRoom + '  ' + this.smallRoom1 + '\n\n';
             str += '办公室: ' + this.lockerRoom + '  ' + this.lockerRoom1 + '\n\n';
