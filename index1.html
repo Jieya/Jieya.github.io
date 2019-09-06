@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script type="text/javascript" src="js/Base64.js"></script>
+    <script type="text/javascript" src="js/3des.js"></script>
+    <script src="https://cdn.bootcss.com/crypto-js/3.1.9-1/crypto-js.min.js"></script>
+    <script src="./js/jquery/jquery-2.0.3.min.js"></script>
+    <script>
+        // function gen(){
+
+        //     var str =document.getElementById("inputStr").value;
+        //     var key =document.getElementById("inputKey").value; 
+
+        //     console.log('str:'+str+"\n key:"+key);
+
+
+        //     var des3en = DES3.encrypt(key, str);
+
+        //     var encrypted = CryptoJS.TripleDES.encrypt(CryptoJS.enc.Utf8.parse(str).toString(), CryptoJS.enc.Utf8.parse(key).toString());
+
+
+        //     console.log(encrypted.toString());
+
+        //     debugger
+        //     document.getElementById('resultDiv').innerHTML=encrypted.toString()+''; 
+        // }
+
+
+        document.addEventListener("paste", function (e) {
+            if (!(e.clipboardData && e.clipboardData.items)) {
+                return;
+            }
+
+            for (var i = 0, len = e.clipboardData.items.length; i < len; i++) {
+                var item = e.clipboardData.items[i];
+
+                if (item.kind === "string") {
+                    item.getAsString(function (str) {
+                        console.log(str); 
+                        // str 是获取到的字符串 
+                        $("#paseteDiv").html(str)
+                        
+                    })
+                } else if (item.kind === "file") {
+                    var pasteFile = item.getAsFile();
+                    // pasteFile就是获取到的文件
+                }
+            }
+        });
+
+
+    </script>
+
+
+    <style>
+        .paseteDiv {
+            width: 800px;
+            height: 550px;
+            border: 1px;
+            border-color: #e8e8e8;
+            border-style: solid;
+            display: block;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body onload="">
+
+    <button onclick="window.android.signSuccess('JsonString')">android</button>
+
+    <button onclick="signSuccess('JsonString')">ios</button>
+
+    <button onclick="btnClick()">一次调用</button>
+
+
+    <a href="./Lease/TenantAuth.html">租客实名认证</a>
+
+
+    <button onclick="pas"> </button>
+
+    <div id="paseteDiv" class="paseteDiv">
+         
+    </div>
+
+
+
+    <!-- 字符串：<input type="text" id="inputStr" value="魏成琳|421302198909031752|15889723572"> <br/><br/>
+    key：<input type="text" id="inputKey" value="52ZKZqtYQBdF0YC9mSC5qfWX"><br/><br/>
+    <button onclick="gen()">加密</button>
+    <br/><br/>
+    <div id="resultDiv"></div> -->
+
+
+
+
+
+</body>
+<script>
+    function btnClick() {
+        if (/android/i.test(navigator.userAgent)) {
+            window.android.signSuccess('JsonString');
+        } else if (/ipad|iphone|iPod|iOS|mac/i.test(navigator.userAgent)) {
+            signSuccess('JsonString')
+        }
+    }
+</script>
+
+</html>

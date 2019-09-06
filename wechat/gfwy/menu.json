@@ -1,0 +1,69 @@
+{
+    "button": [
+        {
+            "name": "关于我们",
+            "sub_button": [
+                {
+                    "type": "view",
+                    "name": "公司简介",
+                    "url": "https://jieya.github.io/wechat/gfwy/about.html"
+                },
+                {
+                    "type": "view",
+                    "name": "产品介绍",
+                    "url": "https://jieya.github.io/wechat/gfwy/house.html"
+                },
+                {
+                    "type": "view",
+                    "name": "运营管理",
+                    "url": "https://jieya.github.io/wechat/gfwy/yunying.html"
+                }
+            ]
+        },
+        {
+            "name": "个人中心",
+            "sub_button": [
+                {
+                    "type": "view",
+                    "name": "我的租约",
+                    "url": "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxf7eee0ebe539c253&redirect_uri=https%3A%2F%2Fpay.fangdongliqi.com%2Fpayapi%2Fmp%2Fvlist&response_type=code&scope=snsapi_base&state=w_gh_7e18e927156e#wechat_redirect"
+                },
+                {
+                    "type": "view",
+                    "name": "我的账单",
+                    "url": "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxf7eee0ebe539c253&redirect_uri=https%3A%2F%2Fpay.fangdongliqi.com%2Fpayapi%2Fmp%2Fblist&response_type=code&scope=snsapi_base&state=w_gh_7e18e927156e#wechat_redirect"
+                }
+            ]
+        },
+        {
+            "name": "广丰服务",
+            "sub_button": [
+                {
+                    "type": "view",
+                    "name": "通知",
+                    "url": "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxf7eee0ebe539c253&redirect_uri=https%3A%2F%2Fpay.fangdongliqi.com%2Fpayapi%2Fmp%2Fnlist&response_type=code&scope=snsapi_base&state=w_gh_7e18e927156e#wechat_redirect"
+                },
+                {
+                    "type": "view",
+                    "name": "报修",
+                    "url": "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxf7eee0ebe539c253&redirect_uri=https%3A%2F%2Fpay.fangdongliqi.com%2Fpayapi%2Fmp%2Frlist&response_type=code&scope=snsapi_base&state=w_gh_7e18e927156e#wechat_redirect"
+                },
+                {
+                    "type": "view",
+                    "name": "投诉",
+                    "url": "https://jieya.github.io/wechat/gfwy/tousu.html"
+                },
+                {
+                    "type": "view",
+                    "name": "益安公约",
+                    "url": "https://jieya.github.io/wechat/gfwy/gongyue.html"
+                },
+                {
+                    "type": "view",
+                    "name": "应急预案",
+                    "url": "https://jieya.github.io/wechat/gfwy/yingji.html"
+                }
+            ]
+        }
+    ]
+}
