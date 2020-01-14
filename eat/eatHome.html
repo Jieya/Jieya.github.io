@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+
+            background-color: #1fab89;
+            color: #006600;
+            padding: 0;
+        }
+
+        .container {
+            background: -webkit-linear-gradient(top, #62d2a2, #1fab89, #62d2a2, #1fab89);
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 10px;
+        }
+
+        .head {
+            height: 55px;
+            width: 100%;
+            line-height: 55px;
+            color: #FFF;
+        }
+
+        .body {
+            width: 100%;
+        }
+
+        .body .title {
+            height: 50px;
+            width: 100%;
+            color: #FFF;
+            font-size: 25px;
+            font-weight: bold;
+            line-height: 50px;
+        }
+
+        .body .list {
+            width: 100%;
+            -webkit-overflow-scrolling: touch;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        /* 隐藏滚动条 */
+        .list::-webkit-scrollbar {
+            display: none;
+        }
+
+        .list .nowItems {
+            width: 31%;
+            height: 165px;
+            background-color: #fff;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 5px;
+            margin-left: 5px;
+        }
+
+        .list .items {
+            width: 80px;
+            height: 78px;
+            background-color: #fff;
+            border-radius: 5px;
+            margin-top: 5px;
+            margin-left: 5px;
+            padding-top: 15px;
+        }
+
+        .item_image {
+            height: 100px;
+            margin-left: 5px;
+            margin-top: 5px;
+        }
+
+        .item_desc {
+            padding: 10px;
+            font-size: 14px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: #006600; 
+            
+        }
+
+        /*正常的未被访问过的链接*/
+        a:link {
+            text-decoration: none;
+        }
+
+        /*已经访问过的链接*/
+        a:visited {
+            text-decoration: none;
+        }
+
+        /*鼠标划过(停留)的链接*/
+        a:hover {
+            text-decoration: none;
+        }
+
+        /* 正在点击的链接*/
+        a:active {
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+
+        <div class="container">
+            <div class="head">
+                <span style="width: 30px;display: inline-block;text-align: center;">
+                    <</span> <span style="width: 40px;display: inline-block;text-align: center;">12月
+                </span> <span style="width: 30px;display: inline-block;text-align: center">></span>
+            </div>
+            <div class="body">
+                <div class="title">
+                    当季水果
+                </div>
+                <div class="list">
+                    <div class="nowItems" v-for=" item in seasonalFruit">
+                        <a href="detail.html">
+                            <div class="item_image">
+                                <img :src="item.imgeUrl" alt=""
+                                    style="margin-top: 15px; width: 95%; height: auto;justify-content: center;">
+
+                            </div>
+                            <div class="item_desc">
+                                {{item.desc}}
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+                <div class="title">
+                    即将成熟
+                </div>
+                <div class="list">
+                    <div class="items" v-for="item in 25" style="text-align: center; font-size: 12px;">
+                        <img src="./assets/img/guiyuan.jpg" alt=""
+                            style=" width: 100%; height: auto;justify-content: center;">
+                        桂圆
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            seasonalFruit: [
+                { name: '桂圆', imgeUrl: './assets/img/guiyuan.jpg', desc: '桂圆的描述' },
+                { name: '黑布林', imgeUrl: './assets/img/heibulin.jpg', desc: '黑布林很好吃' },
+                { name: '荔枝', imgeUrl: './assets/img/lizhi.jpg', desc: '描述' },
+                { name: '圣女果', imgeUrl: './assets/img/shengnvguo.jpg', desc: '荔枝很快就可以吃了' },
+                { name: '桂圆', imgeUrl: './assets/img/guiyuan.jpg', desc: '桂圆的描述' },
+                { name: '桂圆', imgeUrl: './assets/img/guiyuan.jpg', desc: '桂圆的描述' },
+                { name: '黑布林', imgeUrl: './assets/img/heibulin.jpg', desc: '黑布林很好吃' },
+                { name: '荔枝', imgeUrl: './assets/img/lizhi.jpg', desc: '描述' },
+                { name: '圣女果', imgeUrl: './assets/img/shengnvguo.jpg', desc: '荔枝很快就可以吃了' },
+                { name: '桂圆', imgeUrl: './assets/img/guiyuan.jpg', desc: '桂圆的描述' },
+                { name: '圣女果', imgeUrl: './assets/img/shengnvguo.jpg', desc: '荔枝很快就可以吃了' },
+                { name: '荔枝', imgeUrl: './assets/img/lizhi.jpg', desc: '描述' }
+            ]
+        }
+    })
+</script>
+
+</html>
